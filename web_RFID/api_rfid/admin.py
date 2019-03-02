@@ -4,8 +4,9 @@ from .models import Student
 # Register your models here.
 
 class StudentAdmin(admin.ModelAdmin):
-    list_display = ('name', 'code', 'carear', 'status')
-    search_fields = ('name', 'code', 'status')
+    readonly_fields = ['student_id', 'created']
+    list_display = [ 'name', 'last_name', 'cedula', 'card_code', 'career', 'status', 'solvency_status']
+    #search_fields = ['name', 'last_name', 'code', 'status']
     
 
 admin.site.register(Student, StudentAdmin)
